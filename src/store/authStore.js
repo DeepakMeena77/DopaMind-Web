@@ -46,6 +46,20 @@ const useAuthStore = create(
                 set({ user: null, isAuthenticated: false, error: null })
             },
 
+            googleLogin: async () => {
+                set({ isLoading: true, error: null })
+                // Simulate Google OAuth handshake delay
+                await new Promise(resolve => setTimeout(resolve, 800))
+                const googleUser = {
+                    email: 'user@gmail.com',
+                    name: 'Google User',
+                    avatar: 'G',
+                    provider: 'google',
+                }
+                set({ isAuthenticated: true, user: googleUser, isLoading: false, error: null })
+                return { success: true }
+            },
+
             clearError: () => set({ error: null }),
         }),
         {

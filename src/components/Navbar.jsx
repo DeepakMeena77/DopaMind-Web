@@ -64,8 +64,8 @@ const Navbar = () => {
                     : 'bg-white/70 backdrop-blur-md'
                     }`}
             >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between h-16">
+                <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 20px 0 20px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '64px' }}>
                         {/* Logo */}
                         <Link to="/" className="flex items-center gap-2 group">
                             <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white" style={{ background: 'var(--primary)' }}>
@@ -117,19 +117,26 @@ const Navbar = () => {
                                 <>
                                     <Link
                                         to="/login"
-                                        className="text-sm font-medium px-4 py-2 rounded-full transition-colors duration-200"
+                                        className="text-sm font-medium px-4 py-2 rounded-full transition-colors duration-200 hover:text-blue-600"
                                         style={{ color: 'var(--text-secondary)' }}
-                                        onMouseEnter={e => e.target.style.color = 'var(--primary)'}
-                                        onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}
                                     >
                                         Sign In
                                     </Link>
                                     <Link
                                         to="/signup"
-                                        className="text-sm font-semibold px-5 py-2 rounded-full text-white transition-all duration-200"
-                                        style={{ background: '#0F172A', letterSpacing: '0.01em' }}
-                                        onMouseEnter={e => e.currentTarget.style.background = '#1E293B'}
-                                        onMouseLeave={e => e.currentTarget.style.background = '#0F172A'}
+                                        style={{
+                                            background: 'var(--primary)',
+                                            color: 'white',
+                                            padding: '10px 28px',
+                                            borderRadius: '50px',
+                                            fontWeight: 600,
+                                            fontSize: '14px',
+                                            textDecoration: 'none',
+                                            letterSpacing: '0.01em',
+                                            whiteSpace: 'nowrap',
+                                            display: 'inline-block',
+                                            boxShadow: '0 4px 14px rgba(59,130,246,0.35)',
+                                        }}
                                     >
                                         Get Started
                                     </Link>
@@ -187,7 +194,7 @@ const Navbar = () => {
                                         <Link to="/login" onClick={() => setMenuOpen(false)} className="w-full py-3 rounded-full text-sm font-semibold text-center border border-slate-200 text-slate-700 hover:bg-slate-50">
                                             Sign In
                                         </Link>
-                                        <Link to="/signup" onClick={() => setMenuOpen(false)} className="w-full py-3 rounded-full text-sm font-semibold text-center text-white" style={{ background: '#0F172A' }}>
+                                        <Link to="/signup" onClick={() => setMenuOpen(false)} style={{ background: 'var(--primary)', color: 'white', display: 'block', padding: '14px', borderRadius: '50px', fontSize: '14px', fontWeight: 700, textAlign: 'center', textDecoration: 'none' }}>
                                             Get Started Free
                                         </Link>
                                     </>
