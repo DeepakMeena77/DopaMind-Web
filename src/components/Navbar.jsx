@@ -127,16 +127,22 @@ const Navbar = () => {
                                         style={{
                                             background: 'var(--primary)',
                                             color: 'white',
-                                            padding: '10px 28px',
+                                            height: '42px',
+                                            padding: '0 28px',
                                             borderRadius: '50px',
                                             fontWeight: 600,
                                             fontSize: '14px',
                                             textDecoration: 'none',
-                                            letterSpacing: '0.01em',
+                                            letterSpacing: '0.02em',
                                             whiteSpace: 'nowrap',
-                                            display: 'inline-block',
-                                            boxShadow: '0 4px 14px rgba(59,130,246,0.35)',
+                                            display: 'inline-flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            boxShadow: '0 4px 14px rgba(59,130,246,0.30)',
+                                            transition: 'opacity 0.2s',
                                         }}
+                                        onMouseEnter={e => e.currentTarget.style.opacity = '0.88'}
+                                        onMouseLeave={e => e.currentTarget.style.opacity = '1'}
                                     >
                                         Get Started
                                     </Link>
